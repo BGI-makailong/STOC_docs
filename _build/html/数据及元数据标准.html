@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="时空联盟STOC门户服务" href="%E6%97%B6%E7%A9%BA%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" />
+    <link rel="next" title="时空联盟STOC门户服务" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" />
     <link rel="prev" title="约定的术语和定义" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html" /> 
 </head>
 
@@ -40,15 +40,13 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">UsageMa长度</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA.html">时空测试一级标题</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E8%81%94%E7%9B%9FSTOC%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E6%A6%82%E8%BF%B0.html">时空联盟STOC数据标准概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E6%A6%82%E8%BF%B0.html">时空联盟STOC数据标准概述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E8%AE%BF%E9%97%AE%E5%92%8C%E5%85%B1%E4%BA%AB%E7%AD%96%E7%95%A5.html">访问和共享策略</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html">约定的术语和定义</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空联盟STOC门户服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空联盟STOC门户服务</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%A1%88%E4%BE%8B%E5%92%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html">案例和最佳实践</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E8%81%94%E7%9B%9FSTOC%E5%9C%A8%E7%BA%BF%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0CODEPLOT.html">时空联盟STOC在线分析平台CODEPLOT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E5%9C%A8%E7%BA%BF%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0CODEPLOT.html">时空联盟STOC在线分析平台CODEPLOT</a></li>
 </ul>
 
         </div>
@@ -142,6 +140,9 @@
 </tr>
 </tbody>
 </table>
+<p>同时我们也约定了标准分析结果文件，它包括上述表格中的文件类型。其中，原始表达矩阵，即时空转录组学标准分析结果得到的时空转录组基因表达矩阵，filtered后的表达矩阵包括不限于按照组织轮廓切割、按照组织的最大外接矩形切割的表达矩阵等。基因表达矩阵文件用于存储基因的空间表达数据。Stereo-seq技术的SAW 流程中生成的GEF 文件可通过小工具转换成纯文本表格格式基因表达矩阵（GEM），基本格式为含表头的四列
+数据，分别为基因名称、x 坐标、y 坐标、和MID 数。表达矩阵中原点位置校准至（0，0）。基因表达矩阵的表头部分包含六行以“#”开头的注释信息。表头字段说明见表**。</p>
+<img alt="_images/1.png" src="_images/1.png" />
 </section>
 
 
@@ -149,7 +150,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html" class="btn btn-neutral float-left" title="约定的术语和定义" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="%E6%97%B6%E7%A9%BA%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" class="btn btn-neutral float-right" title="时空联盟STOC门户服务" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" class="btn btn-neutral float-right" title="时空联盟STOC门户服务" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
