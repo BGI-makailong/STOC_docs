@@ -1,20 +1,24 @@
-.. STOC_docs documentation master file, created by
-   sphinx-quickstart on Mon Jun 27 13:40:54 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Welcome to STOC's documentation!
+欢迎来到STOC时空组学联盟数据标准文档
+===================================
 
-Welcome to STOC_docs's documentation!
-=====================================
+**Lumache** (/lu'make/) is a Python library for cooks and food lovers
+that creates recipes mixing random ingredients.
+It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
+and offers a *simple* and *intuitive* API.
+
+Check out the :doc:`usage` section for further information, including
+how to :ref:`installation` the project.
+
+.. note::
+
+   This project is under active development.
+   JTT
+
+Contents
+--------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   usage
+   时空
