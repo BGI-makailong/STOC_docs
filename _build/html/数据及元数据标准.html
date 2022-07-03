@@ -43,7 +43,11 @@
 <li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E6%A6%82%E8%BF%B0.html">时空联盟STOC数据标准概述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E8%AE%BF%E9%97%AE%E5%92%8C%E5%85%B1%E4%BA%AB%E7%AD%96%E7%95%A5.html">访问和共享策略</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html">约定的术语和定义</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.2.  如何递交原始数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.4.  递交标准分析结果文件</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空联盟STOC门户服务</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%A1%88%E4%BE%8B%E5%92%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html">案例和最佳实践</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E5%9C%A8%E7%BA%BF%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0CODEPLOT.html">时空联盟STOC在线分析平台CODEPLOT</a></li>
@@ -76,8 +80,9 @@
   <section id="id1">
 <h1>数据及元数据标准<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <p>数据及元数据标准</p>
-<p>4.2.  如何递交原始数据
-将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更好的检索和复用。
+<section id="id2">
+<h2>4.2.  如何递交原始数据<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更好的检索和复用。
 用户可以通过参阅下述网址中的方式进行原始数据递交：
 <a class="reference external" href="https://db.cngb.org/stomics/submission">https://db.cngb.org/stomics/submission</a>
 以下章节将会帮助用户了解需要递交哪些数据，同时下述网址中可以查阅递交模板：
@@ -105,7 +110,9 @@
 </tbody>
 </table>
 <p>我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。</p>
-<p>4.4.  递交标准分析结果文件</p>
+</section>
+<section id="id3">
+<h2>4.4.  递交标准分析结果文件<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -142,7 +149,75 @@
 </table>
 <p>同时我们也约定了标准分析结果文件，它包括上述表格中的文件类型。其中，原始表达矩阵，即时空转录组学标准分析结果得到的时空转录组基因表达矩阵，filtered后的表达矩阵包括不限于按照组织轮廓切割、按照组织的最大外接矩形切割的表达矩阵等。基因表达矩阵文件用于存储基因的空间表达数据。Stereo-seq技术的SAW 流程中生成的GEF 文件可通过小工具转换成纯文本表格格式基因表达矩阵（GEM），基本格式为含表头的四列
 数据，分别为基因名称、x 坐标、y 坐标、和MID 数。表达矩阵中原点位置校准至（0，0）。基因表达矩阵的表头部分包含六行以“#”开头的注释信息。表头字段说明见表**。</p>
-<img alt="_images/1.png" src="_images/1.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 15%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>表头字段</p></th>
+<th class="head"><p>数据类型</p></th>
+<th class="head"><p>示例</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>#FileFormat</p></td>
+<td><p>string</p></td>
+<td><p>GEMv0.1</p></td>
+<td><p>基因表达矩阵文件格式版本号。</p></td>
+</tr>
+<tr class="row-odd"><td><p>#SortedBy</p></td>
+<td><p>string</p></td>
+<td><p>None</p></td>
+<td><p>基因表达矩阵排序策略，有效值包括“geneID”, “x”, “y”, ”MIDCount”, “None”</p></td>
+</tr>
+<tr class="row-even"><td><p>#BinSize</p></td>
+<td><p>uint16</p></td>
+<td><p>1</p></td>
+<td><p>（见** 属于概念Bin。）</p></td>
+</tr>
+<tr class="row-odd"><td><p>#StereoChip</p></td>
+<td><p>string</p></td>
+<td><p>FP200000617TL_C3</p></td>
+<td><p>时空芯片SN。</p></td>
+</tr>
+<tr class="row-even"><td><p>#OffsetX</p></td>
+<td><p>uint32</p></td>
+<td><p>1</p></td>
+<td><p>原点校准至（0，0）前x坐标。</p></td>
+</tr>
+<tr class="row-odd"><td><p>#OffsetY</p></td>
+<td><p>uint32</p></td>
+<td><p>1</p></td>
+<td><p>原点校准至（0，0）前y坐标。</p></td>
+</tr>
+<tr class="row-even"><td><p>geneID</p></td>
+<td><p>string</p></td>
+<td><p>Cr2</p></td>
+<td><p>基因名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>uint32</p></td>
+<td><p>16809</p></td>
+<td><p>x坐标。</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>uint32</p></td>
+<td><p>8546</p></td>
+<td><p>y坐标。</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIDCount</p></td>
+<td><p>uint32</p></td>
+<td><p>1</p></td>
+<td><p>该行基因在坐标（x，y）处的MID数。</p></td>
+</tr>
+</tbody>
+</table>
+<p>比对结果文件，BAM格式为存储测序数据和参考基因组比对、注释结果的常用二进制格式。其中Stereo-seq技术得到的BAM格式文件在QUAL部分进行了Q4简并，更适用于时空转录组大数据的读写和存储。Mapping BAM标签栏 添加自定义标签记录reads的坐标、CID和MID相关的信息，count BAM添加注释信息。</p>
+</section>
 </section>
 
 
