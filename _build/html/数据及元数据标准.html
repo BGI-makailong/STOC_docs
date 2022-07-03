@@ -46,6 +46,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4.2.  如何递交原始数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">4.4.  递交标准分析结果文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.5.递交其他分析结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">4.6.元数据</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空联盟STOC门户服务</a></li>
@@ -217,6 +219,193 @@
 </tbody>
 </table>
 <p>比对结果文件，BAM格式为存储测序数据和参考基因组比对、注释结果的常用二进制格式。其中Stereo-seq技术得到的BAM格式文件在QUAL部分进行了Q4简并，更适用于时空转录组大数据的读写和存储。Mapping BAM标签栏 添加自定义标签记录reads的坐标、CID和MID相关的信息，count BAM添加注释信息。</p>
+<p>BAM标签说明</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 96%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>标签</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cx:i</p></td>
+<td><p>CID对应的空间位置x坐标。</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cy:i</p></td>
+<td><p>CID对应的空间位置y坐标。</p></td>
+</tr>
+<tr class="row-even"><td><p>UR:Z</p></td>
+<td><p>原始MID以二进制编码后用十六进制打印的结果。</p></td>
+</tr>
+<tr class="row-odd"><td><p>XF:Z</p></td>
+<td><p>该序列比对到参考基因组的区域，有效值包括0=EXONIC，1=INTRONIC， 2=INTERGENIC，分别表示外显子区、内含子区和基因间区。</p></td>
+</tr>
+<tr class="row-even"><td><p>GE:Z</p></td>
+<td><p>注释基因名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p>GS:Z</p></td>
+<td><p>该序列比对到参考序列的正链（+）或负链（-）。</p></td>
+</tr>
+<tr class="row-even"><td><p>UB:Z</p></td>
+<td><p>SAW count工具校正后的MID。</p></td>
+</tr>
+</tbody>
+</table>
+<p>mapping BAM文件示例：
+V350043840L1C001R07000634234    272     1       3000094 1       34M16S  *       0       0       GGGCTTTTTTTTTTTTTTTTTTTTTTTTTTGGGTACCAAAATTCTTTATT      F/5+F-GGGGGGGGGGGGFGGGGGGGGFFGFEFFFFFGFFFGFGFGGGGG      NH:i:3  HI:i:1    AS:i:33 nM:i:0  Cx:i:12275      Cy:i:17271      UR:Z:49A9E
+count BAM文件示例：
+V350044293L1C004R0560478942     0       1       3107384 255     11M231866N39M   *       0       0       CGTACTGAGAGGCGGGATCAACTGAGAGAACACTATCTTGGTAGGGCTCT      EF=EFFFBE2
+E=BF&gt;D?;5A&#64;CFECE:A4FFE&#64;*FCBEFAC;5F&amp;F.E0F      NH:i:1  HI:i:1  AS:i:38 nM:i:4  Cx:i:7075       Cy:i:15278      UR:Z:2064       XF:i:1  GE:Z:Xkr4       GS:Z:-</p>
+<p>图像金字塔
+图像金字塔模型是一种多分辨率层次模型，可根据需要以不同分辨率进行图像的存储与显示。所表示的图像范围不变的情况下，金字塔越靠近底层所表示的图像信息越详细，比例尺越大。对register工具处理后的配准图进行梯度降采样处理，得到多个图像数据以图像金字塔形式保存。每个分辨率层级中，将完整的组织配准图像切分为尺寸256 x 256像素的图像碎片进行保存，若在当前分辨率下的图片尺寸小于256ⅹ256，则无需切割。文件名以“.ssDNA.rpi”或“.conA.rpi”结尾，分别对应染色细胞核和细胞膜两种染色方式。
+图像金字塔结构示例：</p>
+<img alt="image/4.4.png" src="image/4.4.png" />
+<p>基因表达文件
+基因表达文件（GEF）是一种为可视化展示时空组基因表达空间分布而设计的文件，其文件结构是一种包含多个bin
+size 基因表达矩阵、有层级关系的结构。
+每个GEF 文件整理一组空间基因表达矩阵。该文件包含组（group）和数据集（dataset）两种主要对象类型。数据
+集是一种多维数组，而组是可以包含数据集和其他组的管理结构。
+基因表达文件第一层可包括“geneExp”（必须），“wholeExp”（可选），和“stat”（可选）三个组。“geneExp”
+中包含一种或多种bin size 下每个基因的表达数据；“wholeExp”中包含一种或多种bin size 下每个坐标点（spot）
+的表达数据和基因个数；“stat”中包含基因名称、每个基因的总表达量、以及每个基因的富集程度打分。基因表达
+文件每个数据集中的 “Attributes”记录数据集属性信息。文件格式图示见下方链接，字段说明见表2-2。SAW 流程
+运行生成三个GEF 区别见表2-3。
+GEF 格式图示:
+<a class="reference external" href="https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map">https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map</a></p>
+</section>
+<section id="id4">
+<h2>4.5.递交其他分析结果<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id5">
+<h2>4.6.元数据<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>时空组学元数据
+时空组学数据集元数据表
+时空组学数据集元数据表，包括项目、组织、样本生物信息分析环境等基本信息见表A.1。</p>
+<p>时空组学数据集元数据表</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 22%" />
+<col style="width: 67%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>信息保护</p></th>
+<th class="head"><p>数据类型</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>项目名称/Project name</p></td>
+<td><p>研究项目名称。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>项目编号/Project ID</p></td>
+<td><p>研究项目编号或代号。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>研究类型/Study type</p></td>
+<td><p>研究项目的类型。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>项目描述/Project Description</p></td>
+<td><p>项目相关描述信息。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>芯片数/Chip counts</p></td>
+<td><p>项目关联芯片数量。</p></td>
+<td><p>不保护</p></td>
+<td><p>整数类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>样本名称/Sample name</p></td>
+<td><p>脱敏后的被采集样本的名称。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>样本标题/Sample title</p></td>
+<td><p>对样本的简单描述。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>采集时间/Collection date</p></td>
+<td><p>样本的采集时间。</p></td>
+<td><p>不保护</p></td>
+<td><p>时间类型</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>分离个体/Isolate</p></td>
+<td><p>对获得该样品的特定个体的鉴定或描述，或其他特殊描述性属性。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>性别/ Gender</p></td>
+<td><p>取样生物的生物学性别。</p></td>
+<td><p>保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>年龄/Age</p></td>
+<td><p>样本采集时的年龄。取决于物种和研究。</p></td>
+<td><p>保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>发展阶段/Developmental stage</p></td>
+<td><p>样本的发展阶段。</p></td>
+<td><p>保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>样本材料提供者/Biomaterial provider</p></td>
+<td><p>实验室/学术带头人/负责人的名称和地址，或收集机构的标识。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>地理位置/Geographic location</p></td>
+<td><p>样品的地理位置。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>物种/Species</p></td>
+<td><p>样本的物种。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>组织类型/Tissue</p></td>
+<td><p>样本的组织来源。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>样本状态/Sample Status</p></td>
+<td><p>样本的储存形式。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
