@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'STOC_docs'
+project = '时空组学联盟数据标准通用指南'
 copyright = '2022, Kailong Ma'
 author = 'Kailong Ma'
 

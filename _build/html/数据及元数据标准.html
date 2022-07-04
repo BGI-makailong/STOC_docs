@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>数据及元数据标准 &mdash; STOC_docs 0.1 文档</title>
+  <title>数据及元数据标准 &mdash; 时空组学联盟数据标准通用指南 0.1 文档</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="时空联盟STOC门户服务" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" />
+    <link rel="next" title="时空组学联盟STOC数据门户服务" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" />
     <link rel="prev" title="约定的术语和定义" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html" /> 
 </head>
 
@@ -29,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> STOC_docs
+            <a href="index.html" class="icon icon-home"> 时空组学联盟数据标准通用指南
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -40,19 +40,25 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E6%A6%82%E8%BF%B0.html">时空联盟STOC数据标准概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E6%A6%82%E8%BF%B0.html">时空组学联盟STOC数据标准概述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E8%AE%BF%E9%97%AE%E5%92%8C%E5%85%B1%E4%BA%AB%E7%AD%96%E7%95%A5.html">访问和共享策略</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html">约定的术语和定义</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">4.2.  如何递交原始数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">4.4.  递交标准分析结果文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">4.5.递交其他分析结果</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">4.6.元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1.数据和元数据的收集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.2.  如何递交原始数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.4.  递交标准分析结果文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">4.5.递交其他分析结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">4.6.元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">4.7.数据下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">4.8.搜索</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">4.9.更新数据及元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">4.10.存储的目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">4.11.数据库结构</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空联盟STOC门户服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空组学联盟STOC数据门户服务</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%A1%88%E4%BE%8B%E5%92%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html">案例和最佳实践</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E5%9C%A8%E7%BA%BF%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0CODEPLOT.html">时空联盟STOC在线分析平台CODEPLOT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E5%9C%A8%E7%BA%BF%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0CODEPLOT.html">时空组学联盟STOC在线分析平台CODEPLOT</a></li>
 </ul>
 
         </div>
@@ -61,7 +67,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">STOC_docs</a>
+          <a href="index.html">时空组学联盟数据标准通用指南</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -83,7 +89,11 @@
 <h1>数据及元数据标准<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <p>数据及元数据标准</p>
 <section id="id2">
-<h2>4.2.  如何递交原始数据<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>4.1.数据和元数据的收集<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<img alt="_images/4.1.png" src="_images/4.1.png" />
+</section>
+<section id="id3">
+<h2>4.2.  如何递交原始数据<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更好的检索和复用。
 用户可以通过参阅下述网址中的方式进行原始数据递交：
 <a class="reference external" href="https://db.cngb.org/stomics/submission">https://db.cngb.org/stomics/submission</a>
@@ -113,8 +123,8 @@
 </table>
 <p>我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。</p>
 </section>
-<section id="id3">
-<h2>4.4.  递交标准分析结果文件<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<section id="id4">
+<h2>4.4.  递交标准分析结果文件<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -262,7 +272,7 @@ E=BF&gt;D?;5A&#64;CFECE:A4FFE&#64;*FCBEFAC;5F&amp;F.E0F      NH:i:1  HI:i:1  AS:
 <p>图像金字塔
 图像金字塔模型是一种多分辨率层次模型，可根据需要以不同分辨率进行图像的存储与显示。所表示的图像范围不变的情况下，金字塔越靠近底层所表示的图像信息越详细，比例尺越大。对register工具处理后的配准图进行梯度降采样处理，得到多个图像数据以图像金字塔形式保存。每个分辨率层级中，将完整的组织配准图像切分为尺寸256 x 256像素的图像碎片进行保存，若在当前分辨率下的图片尺寸小于256ⅹ256，则无需切割。文件名以“.ssDNA.rpi”或“.conA.rpi”结尾，分别对应染色细胞核和细胞膜两种染色方式。
 图像金字塔结构示例：</p>
-<img alt="image/4.4.png" src="image/4.4.png" />
+<img alt="_images/4.4.png" src="_images/4.4.png" />
 <p>基因表达文件
 基因表达文件（GEF）是一种为可视化展示时空组基因表达空间分布而设计的文件，其文件结构是一种包含多个bin
 size 基因表达矩阵、有层级关系的结构。
@@ -276,11 +286,11 @@ size 基因表达矩阵、有层级关系的结构。
 GEF 格式图示:
 <a class="reference external" href="https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map">https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map</a></p>
 </section>
-<section id="id4">
-<h2>4.5.递交其他分析结果<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
-</section>
 <section id="id5">
-<h2>4.6.元数据<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<h2>4.5.递交其他分析结果<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id6">
+<h2>4.6.元数据<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <p>时空组学元数据
 时空组学数据集元数据表
 时空组学数据集元数据表，包括项目、组织、样本生物信息分析环境等基本信息见表A.1。</p>
@@ -404,8 +414,432 @@ GEF 格式图示:
 <td><p>不保护</p></td>
 <td><p>字符类型</p></td>
 </tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>样本描述/Sample Description</p></td>
+<td><p>样本描述信息。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>组织切片编号/Tissue section ID</p></td>
+<td><p>每个组织切片的唯一标识符。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>组织样本类型/Tissue type</p></td>
+<td><p>一般为新鲜冷冻或福尔马林固定石蜡包埋(FFPE)组织。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>组织切片描述/Section resource</p></td>
+<td><p>从解剖学的角度描述该部分。对于人类，可以是“矢状后切面”、“矢状前切面”等。对于植物，可以是“横断面”、“切向纵断面”、“径向纵断面”等。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>冷冻切片温度/Cryosectioning temperature</p></td>
+<td><p>冷冻切片的温度。</p></td>
+<td><p>不保护</p></td>
+<td><p>整数类型</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>组织切片尺寸/Tissue section</p></td>
+<td><p>组织切片的尺寸范围。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>组织切片厚度/Section thickness</p></td>
+<td><p>组织切片的厚度，大多为10µm。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>染色实验描述/Staining protocol</p></td>
+<td><p>实验切片的染色描述，如免疫荧光染色、DNA荧光染色或组织学染色等。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td><p>RNA质量评估值/RNA integrity number (RIN)</p></td>
+<td><p>组织切片放入空间载玻片前进行的RNA质量评估,一般要求RIN值≥7。</p></td>
+<td><p>不保护</p></td>
+<td><p>浮点类型</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td><p>FFPE样本RNA质量评估系数/DV200</p></td>
+<td><p>FFPE（福尔马林固定、石蜡包埋的样本）样本的RNA质量评估系数，表示200个核苷酸大小的RNA片段的百分比，一般应≥50%。</p></td>
+<td><p>不保护</p></td>
+<td><p>浮点类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td><p>组织切片评分/Tissue score</p></td>
+<td><p>大组织样本在切片生成小的样本过程中的得分（非必要）。</p></td>
+<td><p>不保护</p></td>
+<td><p>浮点类型</p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td><p>最佳透化时间/Optimal permeabilization time</p></td>
+<td><p>对于新鲜冷冻样本，每种组织类型确保最佳捕获效果的透化时间。</p></td>
+<td><p>不保护</p></td>
+<td><p>浮数类型</p></td>
+</tr>
 </tbody>
 </table>
+<p>时空组学生物信息分析环境元数据表</p>
+<p>时空组学数据集生成过程中涉及到的图像配准、细胞识别和图像分割、像素聚合分析、聚类聚合分析、细胞聚合分析、数据可视化等生物信息分析方法和软件相关信息见表A.2。</p>
+<p>时空组学生物信息分析环境元数据表</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 33%" />
+<col style="width: 43%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>信息保护</p></th>
+<th class="head"><p>数据类型</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>软件名称/Software name</p></td>
+<td><p>生物信息分析过程中所使用软件名称。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>软件版本/Software version</p></td>
+<td><p>生物信息分析过程中所使用软件版本。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>软件参数/Software parameter</p></td>
+<td><p>生物信息分析过程中所使用软件的参数。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>参考基因组/Reference genome</p></td>
+<td><p>基因组参考序列及版本。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>注释文件/Gene annotation</p></td>
+<td><p>基因注释文件及版本。</p></td>
+<td><p>不保护</p></td>
+<td><p>字符类型</p></td>
+</tr>
+</tbody>
+</table>
+<p>时空组学测序质控数据</p>
+<p>时空组学测序及质控相关数据信息,见表。</p>
+<p>时空组学测序质控数据</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>数据类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>测序类型/Sequencing type</p></td>
+<td><p>字符类型</p></td>
+<td><p>测序类型名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p>测序平台/Sequencing platform</p></td>
+<td><p>字符类型</p></td>
+<td><p>测序平台名称。</p></td>
+</tr>
+<tr class="row-even"><td><p>设备类型/Equipment type</p></td>
+<td><p>字符类型</p></td>
+<td><p>设备类型名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p>文库策略描述/Library strategy</p></td>
+<td><p>字符类型</p></td>
+<td><p>包括文库设计或构建的策略描述。</p></td>
+</tr>
+<tr class="row-even"><td><p>文库类型/Library type</p></td>
+<td><p>字符类型</p></td>
+<td><p>测序的文库类型名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p>文库名称/Library name</p></td>
+<td><p>字符类型</p></td>
+<td><p>测序文库编号。</p></td>
+</tr>
+<tr class="row-even"><td><p>文库富集方法/Library selection</p></td>
+<td><p>字符类型</p></td>
+<td><p>文库制备中对目标物进行富集的方法。</p></td>
+</tr>
+<tr class="row-odd"><td><p>插入片段长度/Insert size</p></td>
+<td><p>整数类型</p></td>
+<td><p>双端测序的平均插入片段长度。</p></td>
+</tr>
+<tr class="row-even"><td><p>下机数据存储路径/Sequencing raw data path</p></td>
+<td><p>字符类型</p></td>
+<td><p>原始下机数据的存储路径。</p></td>
+</tr>
+<tr class="row-odd"><td><p>下机数据校验值/Sequencing raw data verification code</p></td>
+<td><p>字符类型</p></td>
+<td><p>原始数据唯一的校验值。</p></td>
+</tr>
+<tr class="row-even"><td><p>测序总序列数/Total reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>测序得到的总序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>测序读长/Reads lenth</p></td>
+<td><p>整数类型</p></td>
+<td><p>双端/单端测序读长。</p></td>
+</tr>
+<tr class="row-even"><td><p>总碱基对数/Total base pairs</p></td>
+<td><p>整数类型</p></td>
+<td><p>测序总碱基对数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>CID Q30</p></td>
+<td><p>浮点类型</p></td>
+<td><p>CID碱基中质量值达到Q30的百分比。</p></td>
+</tr>
+<tr class="row-even"><td><p>MID Q30</p></td>
+<td><p>浮点类型</p></td>
+<td><p>MID碱基中质量值达到Q30的百分比。</p></td>
+</tr>
+</tbody>
+</table>
+<p>时空组学芯片质控数据</p>
+<p>时空组学芯片质控数据，见表。</p>
+<p>时空组学芯片质控数据</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 7%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>数据类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>芯片序列号/SN ID</p></td>
+<td><p>字符类型</p></td>
+<td><p>定位芯片序列号。</p></td>
+</tr>
+<tr class="row-odd"><td><p>测序芯片数/Chip count</p></td>
+<td><p>整数类型</p></td>
+<td><p>测序芯片的个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>测序总序列数/Total reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>测序得到的总序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>碱基总数/Total base</p></td>
+<td><p>整数类型</p></td>
+<td><p>测序得到的总碱基数。</p></td>
+</tr>
+<tr class="row-even"><td><p>特异性CID种类数/Unique CID number</p></td>
+<td><p>整数类型</p></td>
+<td><p>特异性CID种类数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>没有位置信息的reads数/Reads without position</p></td>
+<td><p>整数类型</p></td>
+<td><p>没有位置信息的 reads 数。</p></td>
+</tr>
+<tr class="row-even"><td><p>含N的CID数</p></td>
+<td><p>整数类型</p></td>
+<td><p>含有N（未知）碱基的CID 数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>含polyA的CID数</p></td>
+<td><p>整数类型</p></td>
+<td><p>含有polyA的CID个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>含polyT的CID数</p></td>
+<td><p>整数类型</p></td>
+<td><p>含有polyT的CID个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>含polyC的CID数</p></td>
+<td><p>整数类型</p></td>
+<td><p>含有polyC的CID个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>含polyG的CID数</p></td>
+<td><p>整数类型</p></td>
+<td><p>含有polyG的CID个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q20百分比</p></td>
+<td><p>浮点类型</p></td>
+<td><p>碱基质量值达Q20的百分比。</p></td>
+</tr>
+<tr class="row-even"><td><p>Q30百分比</p></td>
+<td><p>浮点类型</p></td>
+<td><p>碱基质量值达Q30的百分比。</p></td>
+</tr>
+<tr class="row-odd"><td><p>芯片质控状态/Chip QC check</p></td>
+<td><p>字符类型</p></td>
+<td><p>芯片质量检测是否通过的状态。</p></td>
+</tr>
+<tr class="row-even"><td><p>低质量CID百分比/Low quality CID rate</p></td>
+<td><p>浮点类型</p></td>
+<td><p>低质量的CID百分比。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最大瑕疵面积/Max defect area</p></td>
+<td><p>浮点类型</p></td>
+<td><p>最大瑕疵面积的直径，单位为DNB个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>累计瑕疵面积/Total defect area</p></td>
+<td><p>浮点类型</p></td>
+<td><p>瑕疵累计面积对应直径，单位为DNB个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>CID长度/CID lenth</p></td>
+<td><p>整数类型</p></td>
+<td><p>CID的长度。</p></td>
+</tr>
+<tr class="row-even"><td><p>CID起始位置/CID start</p></td>
+<td><p>整数类型</p></td>
+<td><p>CID的起始位置。</p></td>
+</tr>
+<tr class="row-odd"><td><p>MID长度/MID lenth</p></td>
+<td><p>整数类型</p></td>
+<td><p>MID的长度。</p></td>
+</tr>
+<tr class="row-even"><td><p>MID起始位置/MID start pos</p></td>
+<td><p>整数类型</p></td>
+<td><p>MID起始位置。</p></td>
+</tr>
+<tr class="row-odd"><td><p>MID所在位置/MID location</p></td>
+<td><p>整数类型</p></td>
+<td><p>MID所在位置。</p></td>
+</tr>
+<tr class="row-even"><td><p>有效CID数/Valid CID</p></td>
+<td><p>整数类型</p></td>
+<td><p>能够与芯片CID匹配并得到位置信息的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>含DNB序列数/Reads with dnb</p></td>
+<td><p>整数类型</p></td>
+<td><p>被过滤掉的含有DNB的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>含接头序列数/Reads with adapter</p></td>
+<td><p>整数类型</p></td>
+<td><p>被过滤掉的含有接头的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>滤后序列数/Clean reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>经过质控要求进行过滤后的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>唯一比对序列数/Unique mapping reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>有效CID经过滤后在参考基因组上只匹配一次的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>重复比对序列数/Multi-mapping reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>有效CID经过滤后在参考基因组上匹配多次的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>未比对上的序列数/Unmapping reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>有效CID经过滤后未比对到基因组的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>嵌合比对序列数/Chimeric reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>有效CID经过滤后嵌合比对的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>外显子区序列数/Exonic reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>在参考基因组上只匹配一次的序列中比对到外显子区的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>内含子区序列数/Intronic reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>在参考基因组上只匹配一次的序列中比对到内含子区的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>基因间区序列数/Intergenic reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>在参考基因组上只匹配一次的序列中比对到基因间区的序列个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>单一基因序列数/Unique gene reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>在参考基因组上只匹配一次的序列中比对到单一基因的序列个数。</p></td>
+</tr>
+<tr class="row-even"><td><p>转录本反义链序列数/Antisense reads</p></td>
+<td><p>整数类型</p></td>
+<td><p>在参考基因组上只匹配一次的序列中比对到转录本反义链区域的序列个数。</p></td>
+</tr>
+</tbody>
+</table>
+<p>样本组织覆盖情况质控</p>
+<p>时空组学样本组织覆盖情况质控数据，见表。</p>
+<p>时空组学样本组织覆盖情况质控数据</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 6%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>数据类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>样本覆盖区域/Contour area</p></td>
+<td><p>整数类型</p></td>
+<td><p>样本组织覆盖区域的DNB个数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>捕获mRNA的样本覆盖区域/mRNA captured DNBs under tissue</p></td>
+<td><p>整数类型</p></td>
+<td><p>样本组织覆盖区域内捕获到mRNA的DNB 数。</p></td>
+</tr>
+<tr class="row-even"><td><p>捕获mRNA的样本覆盖区域占比/Ratio of mRNA captured DNBs under tissue</p></td>
+<td><p>浮点类型</p></td>
+<td><p>样本组织覆盖区域内部或到mRNA的DNB数占总样本组织覆盖区域DNB数的百分比。</p></td>
+</tr>
+<tr class="row-odd"><td><p>样本基因类型数/Gene types</p></td>
+<td><p>整数类型</p></td>
+<td><p>样本组织覆盖区域内捕获到的基因类型数。</p></td>
+</tr>
+<tr class="row-even"><td><p>样本覆盖区域的MID种类数/MIDs under tissue</p></td>
+<td><p>整数类型</p></td>
+<td><p>样本组织覆盖区域内捕获到的MID数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>样本覆盖区域捕获的序列数/Reads under tissue</p></td>
+<td><p>整数类型</p></td>
+<td><p>样本组织覆盖区域内捕获到的reads数。</p></td>
+</tr>
+<tr class="row-even"><td><p>样本覆盖区域序列数百分比/Ratio of reads under tissue</p></td>
+<td><p>浮点类型</p></td>
+<td><p>样本组织覆盖区域内捕获到的reads数占有效CID数的百分比。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h2>4.7.数据下载<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id8">
+<h2>4.8.搜索<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p>用户可以通过访问时空联盟的数据门户网站STOMICSDB（<a class="reference external" href="https://db.cngb.org/stomics/">https://db.cngb.org/stomics/</a>）按出版物、工具、作者、技术和数据集来搜索数据资源。</p>
+<img alt="_images/4.8.1.png" src="_images/4.8.1.png" />
+<img alt="_images/4.8.2.png" src="_images/4.8.2.png" />
+</section>
+<section id="id9">
+<h2>4.9.更新数据及元数据<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id10">
+<h2>4.10.存储的目录结构<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id11">
+<h2>4.11.数据库结构<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
@@ -414,7 +848,7 @@ GEF 格式图示:
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html" class="btn btn-neutral float-left" title="约定的术语和定义" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" class="btn btn-neutral float-right" title="时空联盟STOC门户服务" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html" class="btn btn-neutral float-right" title="时空组学联盟STOC数据门户服务" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
