@@ -45,15 +45,16 @@
 <li class="toctree-l1"><a class="reference internal" href="%E7%BA%A6%E5%AE%9A%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89.html">约定的术语和定义</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">数据及元数据标准</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4.1.数据和元数据的收集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">4.2.  如何递交原始数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">4.4.  递交标准分析结果文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">4.5.递交其他分析结果</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">4.6.元数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">4.7.数据下载</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">4.8.搜索</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">4.9.更新数据及元数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">4.10.存储的目录结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">4.11.数据库结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.2.如何递交原始数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.3.原始数据及其格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">4.4.递交标准分析结果文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">4.5.递交其他分析结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">4.6.元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">4.7.数据下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">4.8.搜索</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">4.9.更新数据及元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">4.10.存储的目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">4.11.数据库结构</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%97%B6%E7%A9%BA%E7%BB%84%E5%AD%A6%E8%81%94%E7%9B%9FSTOC%E9%97%A8%E6%88%B7%E6%9C%8D%E5%8A%A1.html">时空组学联盟STOC数据门户服务</a></li>
@@ -93,7 +94,7 @@
 <img alt="_images/4.1.png" src="_images/4.1.png" />
 </section>
 <section id="id3">
-<h2>4.2.  如何递交原始数据<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<h2>4.2.如何递交原始数据<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更好的检索和复用。
 用户可以通过参阅下述网址中的方式进行原始数据递交：
 <a class="reference external" href="https://db.cngb.org/stomics/submission">https://db.cngb.org/stomics/submission</a>
@@ -124,7 +125,33 @@
 <p>我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。</p>
 </section>
 <section id="id4">
-<h2>4.4.  递交标准分析结果文件<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h2>4.3.原始数据及其格式<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field Name</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stereo-seq Fastq</p></td>
+<td><p>时空测序芯片测序文件，.Fastq</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stereo chip mask</p></td>
+<td><p>数据文件，支持.h5和.bin后缀</p></td>
+</tr>
+<tr class="row-even"><td><p>microscope slide image</p></td>
+<td><p>图像文件，.tiff或.tif</p></td>
+</tr>
+</tbody>
+</table>
+<p>我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。</p>
+</section>
+<section id="id5">
+<h2>4.4.递交标准分析结果文件<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -286,11 +313,11 @@ size 基因表达矩阵、有层级关系的结构。
 GEF 格式图示:
 <a class="reference external" href="https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map">https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map</a></p>
 </section>
-<section id="id5">
-<h2>4.5.递交其他分析结果<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
-</section>
 <section id="id6">
-<h2>4.6.元数据<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h2>4.5.递交其他分析结果<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id7">
+<h2>4.6.元数据<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
 <p>时空组学元数据
 时空组学数据集元数据表
 时空组学数据集元数据表，包括项目、组织、样本生物信息分析环境等基本信息见表A.1。</p>
@@ -823,23 +850,23 @@ GEF 格式图示:
 </tbody>
 </table>
 </section>
-<section id="id7">
-<h2>4.7.数据下载<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
-</section>
 <section id="id8">
-<h2>4.8.搜索<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<h2>4.7.数据下载<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id9">
+<h2>4.8.搜索<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
 <p>用户可以通过访问时空联盟的数据门户网站STOMICSDB（<a class="reference external" href="https://db.cngb.org/stomics/">https://db.cngb.org/stomics/</a>）按出版物、工具、作者、技术和数据集来搜索数据资源。</p>
 <img alt="_images/4.8.1.png" src="_images/4.8.1.png" />
 <img alt="_images/4.8.2.png" src="_images/4.8.2.png" />
 </section>
-<section id="id9">
-<h2>4.9.更新数据及元数据<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
-</section>
 <section id="id10">
-<h2>4.10.存储的目录结构<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<h2>4.9.更新数据及元数据<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
 </section>
 <section id="id11">
-<h2>4.11.数据库结构<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<h2>4.10.存储的目录结构<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id12">
+<h2>4.11.数据库结构<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
