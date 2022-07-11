@@ -8,27 +8,14 @@
 
 .. image:: ./images/4.1.png
 
-4.2.如何递交原始数据
----------------------
-将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更好的检索和复用。
-用户可以通过参阅下述网址中的方式进行原始数据递交：
-https://db.cngb.org/stomics/submission
-以下章节将会帮助用户了解需要递交哪些数据，同时下述网址中可以查阅递交模板：
-https://ftp.cngb.org/pub/stomics/
+4.1.1.数据文件
+>>>>>>>>>>>>>>
 
-+------------------------+----------------------------+
-|Field Name	         |Note                        |
-+========================+============================+
-|Stereo-seq Fastq	 |时空测序芯片测序文件，.Fastq|
-+------------------------+----------------------------+
-|Stereo chip mask	 |数据文件，支持.h5和.bin后缀 |
-+------------------------+----------------------------+
-|microscope slide image	 |图像文件，.tiff或.tif       |
-+------------------------+----------------------------+
-我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。
+4.1.1.1.原始数据
+::::::::::::::::::::
 
-4.3.原始数据及其格式
---------------------
+4.1.1.1.1.原始数据格式
+'''''''''''''''''''''
 
 +----------------------+----------------------------+
 |Field Name            |Note                        |
@@ -43,8 +30,21 @@ https://ftp.cngb.org/pub/stomics/
 
 我们约定了时空转录组学测序的原始文件类型，包括时空测序芯片测序文件FASTQ，FASTQ是一种基于文本的格式，用于存储生物序列（通常是核苷酸序列）及其相应的测序质量分数。时空定位芯片掩模文件，用二进制格式.bin或.h5格式，用于存放和记录时空定位芯片测序的探针序列及其空间分布，后续与时空测序数据进行比对，从而确定时空测序技术捕获到的分子在空间上的分布情况。时空测序影像，利用图像学中通用的图像文件格式TIFF或TIF，是一种用于存储时空转录组测序前拍摄的显微影像，用于后期与时空转录组测序数据进行配准。
 
-4.4.递交标准分析结果文件
---------------------------
+4.1.1.1.2.如何递交原始数据
+'''''''''''''''''''''''''
+
+将原始测序的时空转录组学数据递交至STOC，用户除了需要提供原始数据，还需要提供描述测序数据元数据信息以便用户递交的数据可以被更>好的检索和复用。
+用户可以通过参阅下述网址中的方式进行原始数据递交：
+https://db.cngb.org/stomics/submission
+以下章节将会帮助用户了解需要递交哪些数据，同时下述网址中可以查阅递交模板：
+https://ftp.cngb.org/pub/stomics/
+
+4.1.1.2.分析结果
+::::::::::::::::
+
+4.1.1.2.1.标准分析结果文件
+'''''''''''''''''''''''''
+
 +----------------------------------+-------------------------------------+
 |Field Name                        |Note                                 |
 +==================================+=====================================+
@@ -135,11 +135,17 @@ size 基因表达矩阵、有层级关系的结构。
 GEF 格式图示:
 https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map
 
-4.5.递交其他分析结果
------------------------
+4.1.1.2.2.递交标准分析结果
+'''''''''''''''''''''''''
 
-4.6.元数据
----------------
+4.1.1.2.3.其他分析结果
+'''''''''''''''''''''
+
+4.1.1.2.4.递交其他分析结果
+'''''''''''''''''''''''''
+
+4.1.2.元数据
+>>>>>>>>>>>>
 
 时空组学元数据
 时空组学数据集元数据表
@@ -373,24 +379,191 @@ https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map
 |样本覆盖区域序列数百分比/Ratio of reads under tissue               |浮点类型|样本组织覆盖区域内捕获到的reads数占有效CID数的百分比。                |
 +-------------------------------------------------------------------+--------+----------------------------------------------------------------------+
 
-4.7.数据下载
+4.2.存储的目录结构
+----------------
+
+4.3.数据库结构
+-------------
+数据库按**项目递交、样本信息、切片信息、数据集**来规划结构，各结构表中存储的字段及其样例信息详情如下。
+
+
+4.3.1.项目递交
+>>>>>>>>>>>>>
+
+**STomics technology:** Stereo-Seq
+
+**Organism(s):**  Homo sapiens, Mus musculus, Equus ferus
+
+**Data type:** STomics, Raw sequence reads, Transcriptome or Gene expression
+
+**Sample scope:** Multiisolate
+
+**Summary:** High-throughput profiling of in situ gene expression represents a major advance towards the systematic understanding of tissue complexity. Yet, current technologies have major bottlenecks that limit widespread application. Here, we have combined DNA nanoball (DNB) patterned array chips and in situ RNA capture to develop DNB stereo-sequencing (Stereo-seq). This approach allowed us to transcriptionally profile histological sections at nanoscale resolution with a captured area expandable to several cm2. As proof of principle, we applied Stereo-seq to the adult mouse brain and longitudinal sections of E11.5 and E16.5 mouse embryos. Thanks to its sensitivity, scalability, and amenability to additional modifications Stereo-seq will pave the way for the systematic spatially resolved-omics characterization of tissues and organisms.
+
+**Contributor(s):** Zheng C, Hu Y
+
+**Publication:** Niu Y, Sun N, Li C, Lei Y et al. Dissecting primate early post-implantation development using long-term in vitro embryo culture. 
+                   
+**Submitter:** (Liang Wu), BGI-Shenzhen
+
+**DOI:** 10.26036/STT0000001
+
+**Release date:** 2018-03-29
+
+**Updated:** 2018-03-30
+
+**Relations:** CNP0001543
+
+**Statistics:** 
+
+**Sample:** 10                       **Tissue Section:** 20                      **Experiment:**  20                       **Run:** 20                        **Dataset:** 1      
+
+**Datasize:** 100GB
+
++-----------------+------------------------------------------------------------------------------------+
+|Project accession|Title                                                                               |
++=================+====================================================================================+
+|STT0000002       |Derivation of formative-like pluripotent stem cells from mammalian embryos [RNA-Seq]|
++-----------------+------------------------------------------------------------------------------------+
+
+**Sequencing data**
+
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|Project   |Sample     |Tissue Section|Experiment |Run        |Organism    |Platform |Files        |
++==========+===========+==============+===========+===========+============+=========+=============+
+|STT0000001|STTA0000001|STTS0000001   |STEP0000001|STRN0000001|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|STT0000001|STTA0000001|STTS0000002   |STEP0000002|STRN0000002|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+
+**Spatial Gene Expression**
+
++----------+-----------+--------------+------------+---------------------------------------+--------+
+|Project   |Sample     |Tissue Section|Organism    |Spatial Gene Expression & Visualization|Files   |
++==========+===========+==============+============+=======================================+========+
+|STT0000001|STSA0000001|STTS0000001   |Homo sapiens|Preview                                |Download|
++----------+-----------+--------------+------------+---------------------------------------+--------+
+
+4.3.2.样品
+>>>>>>>>>
+
+**Organism:**  Mus musculus
+
+**Attributes:** 
+
+         • isolate: Mouse E11.5 
+         • tissue: embryo
+         • sex: not collected
+         • age: 0 week
+         • development stage: 11.5 days
+         • biomaterial provider: BGI
+         • geographic location: China: Shenzhen
+         • collection date: 2020-01-01
+
+**Release date:** 2018-03-29
+
+**Updated:** 2018-03-30
+
+**Relations:** CNS0000001
+
+**Tissue Section:** 2          **Dataset:** 1
+
+**Sequencing data**
+
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|Project   |Sample     |Tissue Section|Experiment |Run        |Organism    |Platform |Files        |
++==========+===========+==============+===========+===========+============+=========+=============+
+|STT0000001|STTA0000001|STTS0000001   |STEP0000001|STRN0000001|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|STT0000001|STTA0000001|STTS0000002   |STEP0000002|STRN0000002|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+
+**Spatial Gene Expression**
+
++----------+-----------+--------------+------------+---------------------------------------+--------+
+|Project   |Sample     |Tissue Section|Organism    |Spatial Gene Expression & Visualization|Files   |
++==========+===========+==============+============+=======================================+========+
+|STT0000001|STSA0000001|STTS0000001   |Homo sapiens|Preview                                |Download|
++----------+-----------+--------------+------------+---------------------------------------+--------+
+
+4.3.3.组织切片
+>>>>>>>>>>>>>
+
+**Organism:**  Mus musculus
+
+**Tissue section processing:** 
+
+         • tissue type: fresh frozen (FF)
+         • section resource: coronal posterior section
+         • cryosectioning temperature: –20°C for blade and –10°C for the specimen head
+         • tissue section size: 8 x 8mm
+         • section thickness: 10 µm
+         • staining protocol: ssDNA staining
+
+**Release date:** 2018-03-29
+
+**Updated:** 2018-03-30
+
+**Dataset:** 1
+
+
+**Sequencing data**
+
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|Project   |Sample     |Tissue Section|Experiment |Run        |Organism    |Platform |Files        |
++==========+===========+==============+===========+===========+============+=========+=============+
+|STT0000001|STTA0000001|STTS0000001   |STEP0000001|STRN0000001|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|STT0000001|STTA0000001|STTS0000002   |STEP0000002|STRN0000002|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+
+**Spatial Gene Expression**
+
++----------+-----------+--------------+------------+---------------------------------------+--------+
+|Project   |Sample     |Tissue Section|Organism    |Spatial Gene Expression & Visualization|Files   |
++==========+===========+==============+============+=======================================+========+
+|STT0000001|STSA0000001|STTS0000001   |Homo sapiens|Preview                                |Download|
++----------+-----------+--------------+------------+---------------------------------------+--------+
+
+4.3.3.实验
+>>>>>>>>>>
+
+**Library name:** FP200000265BL_B6_1
+
+**Library strategy:** STomics_RNA
+
+**Library source:** TRANSCRIPTOMIC SPATIAL
+
+**Library selection:** cDNA barcoded with spatial and molecular identifier
+
+**Sequencer:** DNBSEQ-T1
+
+**Library layout:** paired
+
+**Insert size(bp):** 500
+
+**Spot layout:** Read1: barcode(1 - 25bp) and MID(26 - 35bp)
+
+**Release date:** 2018-03-29
+
+**Updated:** 2018-03-30
+
+4.4.更新数据及元数据
+---------------------
+
+4.5.应用功能
 ------------
 
-4.8.搜索
-------------
+4.5.1.数据下载
+>>>>>>>>>>>>>
+
+4.5.2.搜索
+>>>>>>>>>>>>
 
 用户可以通过访问时空联盟的数据门户网站STOMICSDB（https://db.cngb.org/stomics/）按出版物、工具、作者、技术和数据集来搜索数据资源。
 
 .. image:: ./images/4.8.1.png
 .. image:: ./images/4.8.2.png
 
-4.9.更新数据及元数据
-----------------------
-
-4.10.存储的目录结构
-------------------
-
-4.11.数据库结构
----------------
 
 
