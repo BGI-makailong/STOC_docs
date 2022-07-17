@@ -59,12 +59,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id16">4.3.2.样品</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id17">4.3.3.组织切片</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id18">4.3.3.实验</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">4.3.4.数据集</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id19">4.4.更新数据及元数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id20">4.5.应用功能</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id21">4.5.1.数据下载</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id22">4.5.2.搜索</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">4.4.更新数据及元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">4.5.应用功能</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">4.5.1.数据下载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">4.5.2.搜索</a></li>
 </ul>
 </li>
 </ul>
@@ -856,6 +857,72 @@ GEF 格式图示:
 </section>
 <section id="id13">
 <h2>4.2.存储的目录结构<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
+<p>在STOmicsDB中，时空标准数据按照约定的存储目录结构进行归档。
+按照存储的文件类型，归档至标准目录中，目录结构里包括项目层级、样本层级、组织切片层级进行划分，具体Accession格式简写请查阅下表。
+未来，当数据通过接口一次性获取时，按照约定的目录结构以项目、样本或组织切片层级相同的目录结构进行获取。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 24%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>存储的文件类型及内容</p></th>
+<th class="head"><p>存储路径</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>空间位置、表达矩阵、注释、图像、report</p></td>
+<td><p>STOmicsDB Root Directory/STTxxxx/STSAxxxx/STTSxxxx/files</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>md5、其他文件</p></td>
+<td><p>STOmicsDB Root Directory/STTxxxx/supp/files</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 47%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Data model</p></th>
+<th class="head"><p>Accession format(STOmics DB)</p></th>
+<th class="head"><p>Accession example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Submission</p></td>
+<td><p>“STS”+7 numerals</p></td>
+<td><p>STS0000001</p></td>
+</tr>
+<tr class="row-odd"><td><p>Project</p></td>
+<td><p>“STT”/”STP”+7 numerals</p></td>
+<td><p>STT0000001</p></td>
+</tr>
+<tr class="row-even"><td><p>Sample</p></td>
+<td><p>“STSA”+7 numerals</p></td>
+<td><p>STSA0000001</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tissue Section</p></td>
+<td><p>“STTS”+7 numerals</p></td>
+<td><p>STTS0000001</p></td>
+</tr>
+<tr class="row-even"><td><p>Experiment</p></td>
+<td><p>“STEP”+7 numerals</p></td>
+<td><p>STEP0000001</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run</p></td>
+<td><p>“STRN”+7 numerals</p></td>
+<td><p>STRN0000001</p></td>
+</tr>
+<tr class="row-even"><td><p>Dataset</p></td>
+<td><p>“STDS”+7 numerals</p></td>
+<td><p>STDS0000001</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="id14">
 <h2>4.3.数据库结构<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h2>
@@ -1164,18 +1231,80 @@ GEF 格式图示:
 <p><strong>Spot layout:</strong> Read1: barcode(1 - 25bp) and MID(26 - 35bp)</p>
 <p><strong>Release date:</strong> 2018-03-29</p>
 <p><strong>Updated:</strong> 2018-03-30</p>
-</section>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Project</p></th>
+<th class="head"><p>Sample</p></th>
+<th class="head"><p>Tissue Section</p></th>
+<th class="head"><p>Experiment</p></th>
+<th class="head"><p>Run</p></th>
+<th class="head"><p>Organism</p></th>
+<th class="head"><p>Platform</p></th>
+<th class="head"><p>Files</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>STT0000001</p></td>
+<td><p>STTA0000001</p></td>
+<td><p>STTS0000001</p></td>
+<td><p>STEP0000001</p></td>
+<td><p>STRN0000001</p></td>
+<td><p>Homo sapiens</p></td>
+<td><p>DNBSEQ-T1</p></td>
+<td><p>Run file(4GB)</p></td>
+</tr>
+<tr class="row-odd"><td><p>STT0000001</p></td>
+<td><p>STTA0000001</p></td>
+<td><p>STTS0000002</p></td>
+<td><p>STEP0000002</p></td>
+<td><p>STRN0000002</p></td>
+<td><p>Homo sapiens</p></td>
+<td><p>DNBSEQ-T1</p></td>
+<td><p>Run file(4GB)</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="id19">
-<h2>4.4.更新数据及元数据<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h2>
+<h3>4.3.4.数据集<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h3>
+<p><strong>STOmics technology:</strong> Stereo-Seq</p>
+<p><strong>Organism:</strong>  Homo sapiens</p>
+<p><strong>Tissue:</strong> cervical tumor tissue</p>
+<p><strong>Development stage:</strong> cervical cancer</p>
+<p><strong>Sex:</strong> Female</p>
+<p><strong>Disease:</strong> cervical squamous cell carcinoma</p>
+<p><strong>Platform:</strong> DNBSEQ-T1</p>
+<p><strong>Summary:</strong> High-throughput profiling of in situ gene expression represents a major advance towards the systematic understanding of tissue complexity. Yet, current technologies have major bottlenecks that limit widespread application. Here, we have combined DNA nanoball (DNB) patterned array chips and in situ RNA capture to develop DNB stereo-sequencing (Stereo-seq). This approach allowed us to transcriptionally profile histological sections at nanoscale resolution with a captured area expandable to several cm2. As proof of principle, we applied Stereo-seq to the adult mouse brain and longitudinal sections of E11.5 and E16.5 mouse embryos. Thanks to its sensitivity, scalability, and amenability to additional modifications Stereo-seq will pave the way for the systematic spatially resolved-omics characterization of tissues and organisms.</p>
+<p><strong>Contributor(s):</strong> Zheng C, Hu Y</p>
+<p><strong>Publication:</strong> Niu Y, Sun N, Li C, Lei Y et al. Dissecting primate early post-implantation development using long-term in vitro embryo culture.</p>
+<p><strong>Submitter:</strong> 亮 吴(Liang Wu), BGI-Shenzhen</p>
+<p><strong>Release date:</strong> 2018-03-29</p>
+<p><strong>Updated:</strong> 2018-03-30</p>
+<p><strong>Reference project:</strong> STT0000001</p>
+<p><strong>Sample count:</strong> 8                                                      <strong>Tissue Section count:</strong> 16</p>
+<p><strong>Cells:</strong> 50009                                              <strong>Spots:</strong> 8928                                          <strong>Genes:</strong> 35538</p>
+</section>
 </section>
 <section id="id20">
-<h2>4.5.应用功能<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h2>
-<section id="id21">
-<h3>4.5.1.数据下载<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h3>
+<h2>4.4.更新数据及元数据<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h2>
 </section>
+<section id="id21">
+<h2>4.5.应用功能<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h2>
 <section id="id22">
-<h3>4.5.2.搜索<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h3>
+<h3>4.5.1.数据下载<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h3>
+</section>
+<section id="id23">
+<h3>4.5.2.搜索<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h3>
 <p>用户可以通过访问时空联盟的数据门户网站STOMICSDB（<a class="reference external" href="https://db.cngb.org/stomics/">https://db.cngb.org/stomics/</a>）按出版物、工具、作者、技术和数据集来搜索数据资源。</p>
 <img alt="_images/4.8.1.png" src="_images/4.8.1.png" />
 <img alt="_images/4.8.2.png" src="_images/4.8.2.png" />

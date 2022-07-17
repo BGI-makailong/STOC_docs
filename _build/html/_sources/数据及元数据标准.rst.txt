@@ -381,6 +381,36 @@ https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map
 
 4.2.存储的目录结构
 ----------------
+在STOmicsDB中，时空标准数据按照约定的存储目录结构进行归档。
+按照存储的文件类型，归档至标准目录中，目录结构里包括项目层级、样本层级、组织切片层级进行划分，具体Accession格式简写请查阅下表。
+未来，当数据通过接口一次性获取时，按照约定的目录结构以项目、样本或组织切片层级相同的目录结构进行获取。
+
+
++--------------------------------------+--------------------------------------------------------+
+|存储的文件类型及内容                  |存储路径                                                |
++===============+======================+========================================================+
+|空间位置、表达矩阵、注释、图像、report|STOmicsDB Root Directory/STTxxxx/STSAxxxx/STTSxxxx/files|
++--------------------------------------+--------------------------------------------------------+
+|md5、其他文件                         |STOmicsDB Root Directory/STTxxxx/supp/files             |
++--------------------------------------+--------------------------------------------------------+
+
++--------------+----------------------------+-----------------+
+|Data model    |Accession format(STOmics DB)|Accession example|
++==============+============================+=================+
+|Submission    |"STS"+7 numerals            |STS0000001       |
++--------------+----------------------------+-----------------+
+|Project       |"STT"/"STP"+7 numerals      |STT0000001       |
++--------------+----------------------------+-----------------+
+|Sample        |"STSA"+7 numerals           |STSA0000001      |
++--------------+----------------------------+-----------------+
+|Tissue Section|"STTS"+7 numerals           |STTS0000001      |
++--------------+----------------------------+-----------------+
+|Experiment    |"STEP"+7 numerals           |STEP0000001      |
++--------------+----------------------------+-----------------+
+|Run           |"STRN"+7 numerals           |STRN0000001      |
++--------------+----------------------------+-----------------+
+|Dataset       |"STDS"+7 numerals           |STDS0000001      |
++--------------+----------------------------+-----------------+
 
 4.3.数据库结构
 -------------
@@ -547,6 +577,49 @@ https://www.processon.com/view/link/610cc49c7d9c087bbd1ab7ab#map
 **Release date:** 2018-03-29
 
 **Updated:** 2018-03-30
+
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|Project   |Sample     |Tissue Section|Experiment |Run        |Organism    |Platform |Files        |
++==========+===========+==============+===========+===========+============+=========+=============+
+|STT0000001|STTA0000001|STTS0000001   |STEP0000001|STRN0000001|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+|STT0000001|STTA0000001|STTS0000002   |STEP0000002|STRN0000002|Homo sapiens|DNBSEQ-T1|Run file(4GB)|
++----------+-----------+--------------+-----------+-----------+------------+---------+-------------+
+
+4.3.4.数据集
+>>>>>>>>>>>
+
+**STOmics technology:** Stereo-Seq
+
+**Organism:**  Homo sapiens
+
+**Tissue:** cervical tumor tissue
+
+**Development stage:** cervical cancer
+
+**Sex:** Female
+
+**Disease:** cervical squamous cell carcinoma
+
+**Platform:** DNBSEQ-T1
+
+**Summary:** High-throughput profiling of in situ gene expression represents a major advance towards the systematic understanding of tissue complexity. Yet, current technologies have major bottlenecks that limit widespread application. Here, we have combined DNA nanoball (DNB) patterned array chips and in situ RNA capture to develop DNB stereo-sequencing (Stereo-seq). This approach allowed us to transcriptionally profile histological sections at nanoscale resolution with a captured area expandable to several cm2. As proof of principle, we applied Stereo-seq to the adult mouse brain and longitudinal sections of E11.5 and E16.5 mouse embryos. Thanks to its sensitivity, scalability, and amenability to additional modifications Stereo-seq will pave the way for the systematic spatially resolved-omics characterization of tissues and organisms.
+
+**Contributor(s):** Zheng C, Hu Y
+
+**Publication:** Niu Y, Sun N, Li C, Lei Y et al. Dissecting primate early post-implantation development using long-term in vitro embryo culture. 
+
+**Submitter:** 亮 吴(Liang Wu), BGI-Shenzhen
+
+**Release date:** 2018-03-29
+
+**Updated:** 2018-03-30
+
+**Reference project:** STT0000001
+
+**Sample count:** 8                                                      **Tissue Section count:** 16
+
+**Cells:** 50009                                              **Spots:** 8928                                          **Genes:** 35538  
 
 4.4.更新数据及元数据
 ---------------------

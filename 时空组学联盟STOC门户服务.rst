@@ -1,6 +1,98 @@
 时空组学联盟STOC数据门户服务
 =================
 
+数据汇归(Submission)
+--------------------
+关于STOmicsDB数据汇交归档标准约定了以下5个重要步骤，包括:**Submitter、Submission type、Submission application、Study、Overview**
+
+**Submitter**
+在Submitter步骤中，递交者应该提供相应的与自身相关的联系方式，包括姓名、电子邮件、电话号码、所在通讯地址、部门组织信息等。
+
+**Submission type**
+在Submission type步骤中，递交者可以选择已经注册过的项目，亦或是新建一个注册项目。
+
+**Submission application**
+
+若新建一个注册项目，在Submission application板块可需根据《中华人民共和国人类遗传资源管理条例》声明数据访问形式是公开，还是以受控形式进行访问。并提供联系方式及声明合作单位信息，数据类型及样品类型，以及声明数据是否涉及人类遗传资源HGR信息和数据收集实体或保存实体情况。
+
+其中数据类型包括：
+
+Gene
+Protein
+Metabolomics
+Clinical trials
+Images
+Articles and literature
+Biomarkers
+Reference materials
+Public data from a public database
+Other
+
+其中样品类型包括：
+
+**Sample type**
+**Animal**
+**Plant**
+**Microorganism**
+Microorganism
+**Human microbiome species (with human genomic reads)**
+Derived from Chinese
+Derived from non-Chinese
+**Human microbiome species (removal of human genomic reads)**
+Derived from Chinese
+Derived from non-Chinese
+**Human and human derived**
+Chinese human genetic resources (HGR)
+Non-Chinese human genetic resources
+Other
+
+**Study**
+在Study板块，需要完善项目信息，包括一段总结和项目数据类型，样本信息。项目数据类型包括：
+Genome sequencing and assembly
+Raw sequence reads
+Genome sequencing
+Assembly
+Clone ends
+Epigenomics
+Exome
+Map
+Metagenome
+Metagenomic assembly
+Phenotype or genotype
+Proteome
+Random survey
+Targeted loci cultured
+Targeted loci environmental
+Targeted locus (Loci)
+Transcriptome or gene expression
+Variation
+Metabolome
+STomics
+Other
+
+在本步骤，还需要提供递交者的信息、该成果发行的出版集团信息以及相关的实验和项目信息等。
+
+**Overview**
+在此步骤，可以预览上述所有步骤中递交的内容，并最终完成时空标准数据递交。
+
+.. image:: ./images/5.0.1.png
+.. image:: ./images/5.0.2.png
+.. image:: ./images/5.0.3.png
+.. image:: ./images/5.0.4.png
+.. image:: ./images/5.0.5.png
+.. image:: ./images/5.0.6.png
+
+
+数据集数据库(Dataset/Collection)
+
+--------------------------------
+数据标准化/审编流程——展示可视化方式
+----------------------------------
+
+数据工具(Tools)
+--------------
+
+
 5.1.门户概述
 -----------
 时空联盟数据门户网站空间转录组学数据库(STOmics DB)是与空间转录组学主题相关的文献和数据集的综合数据库及联盟门户，并为数据查看、分析和可视化提供了方便的工具。
